@@ -25,7 +25,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        
+        return view('Plantilla.index');
     }
 
     /**
@@ -36,9 +36,11 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $datosped=request()->except('_token');
-        Usuarios::insert($datosped);
-        return redirect('Plantilla.Crear');
+        $datosp=request()->except('_token');
+        Usuarios::insert($datosp);
+        
+        return view('Plantilla.index');
+        
     }
 
     /**
@@ -73,8 +75,8 @@ class UsuariosController extends Controller
      */
     public function update($id)
     {
-        $datosped=request()->except('_token','_method');
-        Usuarios::where('id','=',$id)->update($datosped);
+        $datosp=request()->except('_token','_method');
+        Usuarios::where('id','=',$id)->update($datosp);
     
         $item=Usuarios::findOrFail($id);
         return view('Plantilla.index',compact('item'));

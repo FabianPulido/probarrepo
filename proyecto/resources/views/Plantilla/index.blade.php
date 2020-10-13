@@ -54,7 +54,7 @@
     <div class="container">
     @yield('formulario')
     <?php 
-     $datosped = App\Models\Usuarios::all();
+     $datosp = App\Models\Usuarios::all();
     ?>
         <table class="table table-striped">
             <thead>
@@ -66,7 +66,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($datosped as $item)
+            @foreach($datosp as $item)
                 <tr>
                     <td>
                         {{ $item->id }}

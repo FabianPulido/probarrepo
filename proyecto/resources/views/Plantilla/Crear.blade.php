@@ -1,7 +1,7 @@
 @extends("Plantilla.index")
 @section('formulario')
-<form action="{{route('pagdos')}}" method="POST">
-@csrf
+<form action="{{ url('/Plantilla') }}" method="POST">
+{{ csrf_field() }}
         <div class="form-group">
             <label for="formGroupExampleInput">Nombre</label>
             <input type="text" class="form-control" id="Nombre" name="Nombre"  placeholder="Nombre Usuario" required>

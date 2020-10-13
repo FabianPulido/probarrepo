@@ -21,6 +21,7 @@ Route::get('/Plantilla.Crear', function () {
     return view('Plantilla.Crear');
 })->name("pagdos");
 
+
 Route::resource('Plantilla','UsuariosController');
 
 
