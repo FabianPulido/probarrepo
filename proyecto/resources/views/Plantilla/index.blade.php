@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ Route('paginauno')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ Route('paginados')}}">Registrar Usuario</a>
@@ -83,10 +83,10 @@
                             Editar
                         </button>
                         </form>
-                        <form method="POST" action="{{ url('../Plantilla/'.$item->id)">
+                        <form method="POST" action="{{ url('../Plantilla/'.$item->id) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" onclick="return confirm('Desea Eliminar?')" class="btn btn-primary">
                             Eliminar
                         </button>
                         </form>

@@ -88,7 +88,7 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        Usuarios::destroy('id');
-        return redirect('Plantilla.index');
+        Usuarios::destroy($id);
+        return redirect('Plantilla');
     }
 }
