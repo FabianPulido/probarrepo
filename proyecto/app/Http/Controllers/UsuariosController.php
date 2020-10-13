@@ -38,7 +38,7 @@ class UsuariosController extends Controller
     {
         $datosped=request()->except('_token');
         Usuarios::insert($datosped);
-        return redirect('Plantilla.crear');
+        return redirect('Plantilla.Crear');
     }
 
     /**

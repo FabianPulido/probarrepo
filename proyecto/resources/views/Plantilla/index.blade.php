@@ -54,7 +54,7 @@
     <div class="container">
 
     <?php 
-     $datosp = App\Models\Usuarios::all();
+     $datosped = App\Models\Usuarios::all();
     ?>
         <table class="table table-striped">
             <thead>
@@ -66,7 +66,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($datosp as $item)
+            @foreach($datosped as $item)
                 <tr>
                     <td>
                         {{ $item->id }}
