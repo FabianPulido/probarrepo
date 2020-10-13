@@ -50,6 +50,10 @@
 
     <!-- Tabla para mostrar los datos al usuario -->
     <div class="container">
+
+    <?php 
+     $datosp=Usuarios::App/Models/All();
+    ?>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -60,6 +64,7 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($datosp as $item)
                 <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
