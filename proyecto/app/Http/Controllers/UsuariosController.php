@@ -36,13 +36,9 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $usuarioNuevo = new Usuarios;
-        $usuarioNuevo->Nombre = $request->Nombre;
-        $usuarioNuevo->Cedula = $request->Cedula;
-        
-        $usuarioNuevo->save();
-
-        return back()->with('mensaje', 'Usuario Registrado');
+        $datosped=request()->except('_token');
+        Usuarios::insert($datosped);
+        return redirect('Plantilla.crear');
     }
 
     /**
@@ -65,7 +61,7 @@ class UsuariosController extends Controller
     public function edit( $id)
     {
         $item=Usuarios::findOrFail($id);
-        return view('Plantilla.Crea',compact('item'));
+        return view('Plantilla.Crear',compact('item'));
     }
 
     /**

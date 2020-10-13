@@ -1,6 +1,7 @@
 @extends("Plantilla.index")
 @section('formulario')
-    <form action="{{ route('crear.usuario') }}">
+<form action="{{route('paginados')}}" method="POST">
+@csrf
         <div class="form-group">
             <label for="formGroupExampleInput">Nombre</label>
             <input type="text" class="form-control" name="Nombre" placeholder="Nombre Usuario">
@@ -15,9 +16,5 @@
             </button>
         </div>
     </form>
-
-    @if ( session('mensaje') )
-        <div class="alert alert-success">{{ session('mensaje') }}</div>
-    @endif
 
 @endsection
