@@ -78,8 +78,10 @@
                         {{ $item->Cedula }}
                     </td>
                     <td>
-                    <form method="GET">
-                        <button  type="submit" class="btn btn-primary">
+                    <form method="GET" action="{{ url('../Plantilla/'.$item->id.'edit') }}">
+                        {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
+                        <button  type="submit"  onclick="return confirm('Desea Editar?')" class="btn btn-primary">
                             Editar
                         </button>
                         </form>

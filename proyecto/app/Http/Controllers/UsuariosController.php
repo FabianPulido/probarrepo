@@ -65,7 +65,7 @@ class UsuariosController extends Controller
     public function edit( $id)
     {
         $item=Usuarios::findOrFail($id);
-       /** return view('layout.editar',compact('item'));*/
+        return view('Plantilla.Crea',compact('item'));
     }
 
     /**
@@ -81,7 +81,7 @@ class UsuariosController extends Controller
         Usuarios::where('id','=',$id)->update($datosped);
     
         $item=Usuarios::findOrFail($id);
-       /** return view('layout.index',compact('item'));*/
+        return view('Plantilla.index',compact('item'));
     }
 
     /**
