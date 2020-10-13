@@ -30,7 +30,7 @@
                     <a class="nav-link" href="{{ Route('paginauno')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ Route('paginados')}}">Registrar Usuario</a>
+                    <a class="nav-link" href="{{ Route('pagdos')}}">Registrar Usuario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
@@ -49,10 +49,10 @@
         </div>
     </nav>
 
-
+    
     <!-- Tabla para mostrar los datos al usuario -->
     <div class="container">
-
+    @yield('formulario')
     <?php 
      $datosped = App\Models\Usuarios::all();
     ?>
@@ -78,13 +78,7 @@
                         {{ $item->Cedula }}
                     </td>
                     <td>
-                    <form method="GET" action="{{ url('../Plantilla/'.$item->id.'edit') }}">
-                        {{ csrf_field() }}
-                        {{ method_field('PATCH') }}
-                        <button  type="submit"  onclick="return confirm('Desea Editar?')" class="btn btn-primary">
-                            Editar
-                        </button>
-                        </form>
+                
                         <form method="POST" action="{{ url('../Plantilla/'.$item->id) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
@@ -101,9 +95,7 @@
 
 
     <!-- Formulario Registro -->
-    <div class="container">
-        @yield('formulario')
-    </div>
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Plantilla.index');
 })->name('paginauno');
+
 Route::get('/Plantilla.Crear', function () {
     return view('Plantilla.Crear');
-})->name('paginados');
+})->name("pagdos");
 
 Route::resource('Plantilla','UsuariosController');
 
