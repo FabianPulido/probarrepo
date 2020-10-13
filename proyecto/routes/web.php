@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('plantilla.index');
+    return view('Plantilla.index');
 })->name('paginauno');
 
-Route::resource('principal','UsuariosController');
+Route::resource('Plantilla','UsuariosController');
 
 
 
