@@ -14,7 +14,8 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        //
+        $datosp['usuarios']=Usuarios::paginate(4);
+        return view('Plantilla.index',$datosp);
     }
 
     /**
@@ -36,7 +37,7 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         $datosped=request()->except('_token');
-        Tareas::insert($datosped);
+        Usuarios::insert($datosped);
         return redirect('layout.layout');
     }
 
@@ -59,8 +60,8 @@ class UsuariosController extends Controller
      */
     public function edit( $id)
     {
-        $item=Tareas::findOrFail($id);
-        return view('layout.editar',compact('item'));
+        $item=Usuarios::findOrFail($id);
+       /** return view('layout.editar',compact('item'));*/
     }
 
     /**
@@ -73,10 +74,10 @@ class UsuariosController extends Controller
     public function update($id)
     {
         $datosped=request()->except('_token','_method');
-        Tareas::where('id','=',$id)->update($datosped);
+        Usuarios::where('id','=',$id)->update($datosped);
     
-        $item=Tareas::findOrFail($id);
-        return view('layout.index',compact('item'));
+        $item=Usuarios::findOrFail($id);
+       /** return view('layout.index',compact('item'));*/
     }
 
     /**
@@ -88,6 +89,6 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         Usuarios::destroy('id');
-        return redirect('welcome');
+        return redirect('Plantilla.index');
     }
 }
