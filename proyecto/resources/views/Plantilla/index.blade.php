@@ -30,7 +30,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Registrar Usuario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
@@ -59,20 +59,21 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Cedula</th>
+                    <th scope="col">Procedimiento</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($datosp as $item)
                 <tr>
-                    <th scope="row">1</th>
+
                     <td>
                         {{ $item->id }}
                     </td>
                     <td>
-                        {{ $item->MNombre }}
+                        {{ $item->Nombre }}
                     </td>
                     <td>
                         {{ $item->Cedula }}
@@ -81,9 +82,11 @@
                         <button class="btn btn-primary">
                             Editar
                         </button>
+
                         <button class="btn btn-primary">
                             Eliminar
                         </button>
+                        
                     </td>
                 </tr>
             </tbody>
