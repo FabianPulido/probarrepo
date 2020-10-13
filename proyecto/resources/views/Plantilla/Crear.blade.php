@@ -1,6 +1,6 @@
 @extends("Plantilla.index")
 @section('formulario')
-    <form>
+    <form action="{{ route('crear.usuario') }}">
         <div class="form-group">
             <label for="formGroupExampleInput">Nombre</label>
             <input type="text" class="form-control" name="Nombre" placeholder="Nombre Usuario">
