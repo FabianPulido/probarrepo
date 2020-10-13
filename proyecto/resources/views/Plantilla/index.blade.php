@@ -83,7 +83,7 @@
                     <form method="GET" action="{{ url('../Plantilla/'.$item->id.'/edit') }}">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
-                        <button type="submit" onclick="return confirm('Desea Editar?')" class="btn btn-primary">
+                        <button type="submit" style="background-color:green;" onclick="return confirm('Desea Editar?')" class="btn btn-primary">
                             Editar
                         </button>
                         </form>
@@ -91,7 +91,7 @@
                         <form method="POST" action="{{ url('../Plantilla/'.$item->id) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <button type="submit" onclick="return confirm('Desea Eliminar?')" class="btn btn-primary">
+                        <button type="submit" style="background-color:red;" onclick="return confirm('Desea Eliminar?')" class="btn btn-primary">
                             Eliminar
                         </button>
                         </form>
