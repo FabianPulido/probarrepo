@@ -1,0 +1,13 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+/*--------------------------------------------*/
+
+body{
+    background-color: rgb(38, 38, 66);
+    color: white;
+}
