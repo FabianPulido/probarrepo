@@ -60,18 +60,33 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cedula</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($datosp as $item)
                 <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>
+                        {{ $item->id }}
+                    </td>
+                    <td>
+                        {{ $item->MNombre }}
+                    </td>
+                    <td>
+                        {{ $item->Cedula }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary">
+                            Editar
+                        </button>
+                        <button class="btn btn-primary">
+                            Eliminar
+                        </button>
+                    </td>
                 </tr>
             </tbody>
             @endforeach()
