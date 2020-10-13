@@ -20,6 +20,8 @@ Route::get('/Plantilla.Crear', function () {
     return view('Plantilla.Crear');
 })->name('paginados');
 
+Route::post('Plantilla/', 'App\Controllers\UsuariosController@store')->name("crear.usuario");
+
 Route::resource('Plantilla','UsuariosController');
 
 
