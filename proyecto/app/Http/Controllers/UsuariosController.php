@@ -35,7 +35,9 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datosped=request()->except('_token');
+        Tareas::insert($datosped);
+        return redirect('layout.layout');
     }
 
     /**
@@ -55,9 +57,10 @@ class UsuariosController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuarios $usuarios)
+    public function edit( $id)
     {
-        //
+        $item=Tareas::findOrFail($id);
+        return view('layout.editar',compact('item'));
     }
 
     /**
@@ -67,9 +70,13 @@ class UsuariosController extends Controller
      * @param  \App\Models\Usuarios  $usuarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuarios $usuarios)
+    public function update($id)
     {
-        //
+        $datosped=request()->except('_token','_method');
+        Tareas::where('id','=',$id)->update($datosped);
+    
+        $item=Tareas::findOrFail($id);
+        return view('layout.index',compact('item'));
     }
 
     /**
