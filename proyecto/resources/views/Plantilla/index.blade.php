@@ -68,7 +68,6 @@
             <tbody>
             @foreach($datosp as $item)
                 <tr>
-
                     <td>
                         {{ $item->id }}
                     </td>
@@ -95,6 +94,10 @@
     </div>
 
 
+    <!-- Formulario Registro -->
+    <div class="container">
+        @yield('formulario')
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
