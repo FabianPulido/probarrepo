@@ -53,9 +53,11 @@
     <!-- Tabla para mostrar los datos al usuario -->
     <div class="container">
     @yield('formulario')
+    
     <?php 
      $datosp = App\Models\Usuarios::all();
     ?>
+    @yield('editar')
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -78,6 +80,13 @@
                         {{ $item->Cedula }}
                     </td>
                     <td>
+                    <form method="GET" action="{{ url('../Plantilla/'.$item->id.'/edit') }}">
+                        {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
+                        <button type="submit" onclick="return confirm('Desea Editar?')" class="btn btn-primary">
+                            Editar
+                        </button>
+                        </form>
                 
                         <form method="POST" action="{{ url('../Plantilla/'.$item->id) }}">
                         {{ csrf_field() }}

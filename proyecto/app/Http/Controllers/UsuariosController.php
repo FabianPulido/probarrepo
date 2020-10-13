@@ -38,7 +38,6 @@ class UsuariosController extends Controller
     {
         $datosp=request()->except('_token');
         Usuarios::insert($datosp);
-        
         return view('Plantilla.index');
         
     }
@@ -63,7 +62,7 @@ class UsuariosController extends Controller
     public function edit( $id)
     {
         $item=Usuarios::findOrFail($id);
-        return view('Plantilla.Crear',compact('item'));
+        return view('Plantilla.Editar',compact('item'));
     }
 
     /**
