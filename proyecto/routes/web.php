@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('Plantilla.index');
 })->name('paginauno');
 
+Route::post('Plantilla/', 'App\Controllers\UsuariosController@store')->name("crear.usuario");
+
 Route::resource('Plantilla','UsuariosController');
 
 

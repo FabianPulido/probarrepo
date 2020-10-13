@@ -25,7 +25,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,9 +36,13 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $datosped=request()->except('_token');
-        Usuarios::insert($datosped);
-        return redirect('layout.layout');
+        $usuarioNuevo = new Usuarios;
+        $usuarioNuevo->Nombre = $request->Nombre;
+        $usuarioNuevo->Cedula = $request->Cedula;
+        
+        $usuarioNuevo->save();
+
+        return back()->with('mensaje', 'Usuario Registrado');
     }
 
     /**
