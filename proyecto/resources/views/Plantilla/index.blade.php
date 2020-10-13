@@ -75,8 +75,6 @@
                     <td>
                         {{ $item->Cedula }}
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <button class="btn btn-primary">
                             Editar
