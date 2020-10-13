@@ -30,7 +30,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Registrar Usuario</a>
+                    <a class="nav-link" href="{{ Route('paginados')}}">Registrar Usuario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
@@ -78,14 +78,18 @@
                         {{ $item->Cedula }}
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                    <form method="GET">
+                        <button  type="submit" class="btn btn-primary">
                             Editar
                         </button>
-
-                        <button class="btn btn-primary">
+                        </form>
+                        <form method="POST" action="{{ url('../Plantilla/'.$item->id)">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="submit" class="btn btn-primary">
                             Eliminar
                         </button>
-                        
+                        </form>
                     </td>
                 </tr>
             </tbody>
